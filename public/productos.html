@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Tienda — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body>
+    <header class="border-b bg-white">
+      <nav class="container-wide flex h-20 items-center justify-between">
+        <a class="text-2xl font-black" href="/">🐾 SuscriPet</a>
+        <div class="flex items-center gap-5 text-sm font-semibold">
+          <a href="/planes.html">Planes</a
+          ><a href="/servicios.html">Servicios</a
+          ><a class="btn-primary" href="/dashboard.html">Mi cuenta</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="bg-sand py-14">
+        <div class="container-wide">
+          <span class="eyebrow">La tienda SuscriPet</span>
+          <h1 class="mt-3 text-4xl font-black">
+            Pequeños detalles, grandes momentos.
+          </h1>
+          <p class="mt-4 max-w-2xl text-slate-600">
+            Descubre productos de nuestro catálogo para acompañar su juego,
+            cuidado y bienestar.
+          </p>
+        </div>
+      </section>
+      <section class="container-wide py-12">
+        <div class="mb-7 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-extrabold">Catálogo</h2>
+            <p class="mt-1 text-sm text-slate-500">
+              Productos sujetos a disponibilidad de inventario.
+            </p>
+          </div>
+          <a class="btn-secondary" href="/planes.html"
+            >Ver beneficios de suscriptor</a
+          >
+        </div>
+        <p class="mb-5 rounded-xl bg-mint px-4 py-3 text-sm font-semibold text-ink" data-shop-plan aria-live="polite">Consultando tu plan…</p>
+        <div
+          class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          data-products
+          aria-live="polite"
+        >
+          <div class="surface h-80 animate-pulse bg-slate-50"></div>
+          <div class="surface h-80 animate-pulse bg-slate-50"></div>
+          <div class="surface h-80 animate-pulse bg-slate-50"></div>
+          <div class="surface h-80 animate-pulse bg-slate-50"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="container-wide border-t py-7 text-sm text-slate-500">
+      © <span data-year></span> SuscriPet
+    </footer>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/productos.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mi espacio — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]">
+    <div class="min-h-screen md:grid md:grid-cols-[250px_1fr]">
+      <aside
+        class="hidden border-r border-emerald-950/5 bg-white p-6 md:flex md:flex-col"
+      >
+        <a class="text-xl font-black" href="/">🐾 SuscriPet</a>
+        <p
+          class="mt-10 text-xs font-bold uppercase tracking-widest text-slate-400"
+        >
+          Mi espacio
+        </p>
+        <nav class="mt-4 space-y-1 text-sm font-semibold">
+          <a
+            class="block rounded-xl bg-mint px-4 py-3 text-leaf"
+            href="/dashboard.html"
+            >Resumen</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/mascotas.html"
+            >Mis mascotas</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/mi-suscripcion.html"
+            >Mi suscripción</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/historial.html"
+            >Historial</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/perfil.html"
+            >Mi perfil</a
+          >
+        </nav>
+        <div class="mt-auto">
+          <a
+            class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-sand"
+            href="/"
+            >← Volver a la tienda</a
+          ><button
+            class="mt-1 w-full rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-500 hover:bg-sand"
+            data-logout
+          >
+            Cerrar sesión
+          </button>
+        </div>
+      </aside>
+      <main class="container-wide py-8 md:px-10" data-dashboard>
+        <header class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <a class="text-lg font-black md:hidden" href="/">🐾 SuscriPet</a>
+            <p class="mt-2 text-sm text-slate-500">Tu espacio personal</p>
+            <h1 class="mt-1 text-3xl font-black">
+              Hola, <span data-user-name>…</span> 👋
+            </h1>
+          </div>
+          <div class="flex gap-2">
+            <a class="btn-secondary" href="/mascotas.html">+ Mascota</a
+            ><button class="btn-secondary md:hidden" data-logout>Salir</button>
+          </div>
+        </header>
+        <section class="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="surface p-5">
+            <p class="text-sm text-slate-500">Mascotas registradas</p>
+            <p class="mt-3 text-3xl font-black" data-pet-count>—</p>
+            <a
+              class="mt-3 inline-block text-sm font-bold text-leaf"
+              href="/mascotas.html"
+              >Ver perfiles →</a
+            >
+          </article>
+          <article class="surface p-5">
+            <p class="text-sm text-slate-500">Plan actual</p>
+            <p class="mt-3 text-2xl font-black" data-plan-name>—</p>
+            <p class="mt-1 text-sm text-slate-500" data-plan-price>—</p>
+          </article>
+          <article class="surface p-5">
+            <p class="text-sm text-slate-500">Estado</p>
+            <p
+              class="mt-3 inline-flex rounded-full bg-mint px-3 py-1 text-sm font-bold text-leaf"
+              data-sub-status
+            >
+              —
+            </p>
+            <a
+              class="mt-3 block text-sm font-bold text-leaf"
+              href="/mi-suscripcion.html"
+              >Gestionar plan →</a
+            >
+          </article>
+          <article class="surface p-5">
+            <p class="text-sm text-slate-500">Próxima renovación</p>
+            <p class="mt-3 text-xl font-black" data-renewal>—</p>
+            <p class="mt-1 text-sm text-slate-500">Revisa tu suscripción</p>
+          </article>
+        </section>
+        <section class="mt-10">
+          <div class="flex items-end justify-between">
+            <div>
+              <span class="eyebrow">Tu familia</span>
+              <h2 class="mt-2 text-2xl font-extrabold">Tus mascotas</h2>
+            </div>
+            <a href="/mascotas.html" class="text-sm font-bold text-leaf"
+              >Administrar →</a
+            >
+          </div>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-pets>
+            <div class="surface h-28 animate-pulse"></div>
+          </div>
+        </section>
+        <section class="mt-10">
+          <div class="flex items-end justify-between">
+            <div>
+              <span class="eyebrow">Para ustedes</span>
+              <h2 class="mt-2 text-2xl font-extrabold">
+                Promociones y novedades
+              </h2>
+            </div>
+            <a href="/productos.html" class="text-sm font-bold text-leaf"
+              >Ir a la tienda →</a
+            >
+          </div>
+          <div
+            class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            data-promotions
+          >
+            <div class="surface h-24 animate-pulse"></div>
+          </div>
+        </section>
+        <section class="mt-10 rounded-3xl bg-ink p-7 text-white">
+          <h2 class="text-xl font-bold">¿Quieres descubrir más beneficios?</h2>
+          <p class="mt-2 text-emerald-50/75">
+            Compara los planes disponibles para encontrar el que mejor se ajusta
+            a su rutina.
+          </p>
+          <a
+            class="mt-5 inline-flex rounded-full bg-white px-5 py-3 font-bold text-ink"
+            href="/planes.html"
+            >Explorar planes →</a
+          >
+        </section>
+        <footer class="py-8 text-sm text-slate-400">
+          © <span data-year></span> SuscriPet
+        </footer>
+      </main>
+    </div>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/dashboard.js" defer></script>
+  </body>
+</html>

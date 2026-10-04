@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mis mascotas — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]">
+    <main class="container-wide py-8">
+      <header class="flex items-center justify-between">
+        <a class="text-xl font-black" href="/dashboard.html">← Mi espacio</a
+        ><a class="font-black" href="/">SuscriPet 🐾</a>
+      </header>
+      <section class="mt-9">
+        <span class="eyebrow">Perfiles</span>
+        <h1 class="mt-2 text-3xl font-black">Mis mascotas</h1>
+        <p class="mt-2 text-slate-600">
+          Conoce sus perfiles para ayudarte a encontrar productos y beneficios
+          relevantes.
+        </p>
+      </section>
+      <div class="mt-7 grid items-start gap-6 lg:grid-cols-[1fr_1.25fr]">
+        <form class="surface space-y-4 p-6" data-pet-form>
+          <h2 class="text-xl font-extrabold">Agregar una mascota</h2>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="pet-name"
+              >Nombre</label
+            ><input
+              class="field"
+              id="pet-name"
+              name="name"
+              required
+              maxlength="80"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="species"
+                >Especie</label
+              ><select class="field" id="species" name="species">
+                <option>Perro</option>
+                <option>Gato</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="breed"
+                >Raza</label
+              ><input class="field" id="breed" name="breed" maxlength="80" />
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="age"
+                >Edad (años)</label
+              ><input
+                class="field"
+                id="age"
+                name="age"
+                type="number"
+                min="0"
+                max="50"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="weight"
+                >Peso (kg)</label
+              ><input
+                class="field"
+                id="weight"
+                name="weight"
+                type="number"
+                min="0"
+                step="0.1"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="size">Tamaño</label
+            ><select class="field" id="size" name="size">
+              <option>Pequeño</option>
+              <option selected>Mediano</option>
+              <option>Grande</option>
+            </select>
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="needs"
+              >Necesidades
+              <span class="font-normal text-slate-400"
+                >(separa con comas)</span
+              ></label
+            ><input
+              class="field"
+              id="needs"
+              name="needs"
+              placeholder="Piel sensible, más juego…"
+            />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="notes"
+              >Información adicional</label
+            ><textarea
+              class="field min-h-20"
+              id="notes"
+              name="notes"
+            ></textarea>
+          </div>
+          <button class="btn-primary w-full" type="submit">
+            Guardar perfil
+          </button>
+        </form>
+        <section>
+          <h2 class="mb-4 text-xl font-extrabold">Perfiles registrados</h2>
+          <div
+            class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1"
+            data-pet-list
+            aria-live="polite"
+          >
+            <div class="surface h-32 animate-pulse"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/mascotas.js" defer></script>
+  </body>
+</html>

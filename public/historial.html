@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Historial — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]">
+    <main class="container-wide py-8">
+      <header class="flex justify-between">
+        <a href="/dashboard.html" class="font-bold">← Mi espacio</a
+        ><a href="/" class="font-black">SuscriPet 🐾</a>
+      </header>
+      <section class="mt-10">
+        <span class="eyebrow">Tu actividad</span>
+        <h1 class="mt-2 text-3xl font-black">Historial</h1>
+        <p class="mt-2 text-slate-600">
+          Consulta tus suscripciones y pedidos registrados.
+        </p>
+      </section>
+      <section class="mt-7 grid gap-6 lg:grid-cols-2">
+        <article class="surface p-6">
+          <h2 class="text-xl font-extrabold">Cambios de suscripción</h2>
+          <div class="mt-5 space-y-3" data-sub-history>
+            <div class="h-16 animate-pulse rounded-xl bg-slate-50"></div>
+          </div>
+        </article>
+        <article class="surface p-6">
+          <h2 class="text-xl font-extrabold">Pedidos</h2>
+          <div class="mt-5 space-y-3" data-order-history>
+            <div class="h-16 animate-pulse rounded-xl bg-slate-50"></div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/suscripciones.js" defer></script>
+  </body>
+</html>

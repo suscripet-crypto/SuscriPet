@@ -1,0 +1,2 @@
+const contactForm = document.querySelector('[data-contact-form]');
+if (contactForm) contactForm.addEventListener('submit', event => { event.preventDefault(); const data = Object.fromEntries(new FormData(contactForm)); const subject = encodeURIComponent(`SuscriPet: ${data.subject}`); const body = encodeURIComponent(`Hola, soy ${data.name} (${data.email}).\n\n${data.message}`); location.href = `mailto:hola@suscripet.co?subject=${subject}&body=${body}`; toast('Abriendo tu aplicación de correo…'); });

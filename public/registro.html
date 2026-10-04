@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Crear cuenta — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body>
+    <main class="grid min-h-screen md:grid-cols-2">
+      <section class="grid place-items-center bg-sand p-8">
+        <div class="max-w-lg">
+          <a class="text-2xl font-black" href="/">🐾 SuscriPet</a>
+          <div
+            class="mt-14 rounded-[32px] bg-gradient-to-br from-mint to-[#f1e7d2] p-10 text-center"
+          >
+            <span class="text-8xl">🐶</span>
+            <p class="mt-5 text-xl font-extrabold">Cada mascota es única.</p>
+            <p class="mt-2 text-slate-600">
+              Su perfil nos ayuda a recomendarte beneficios y productos que
+              encajen con su forma de ser.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="grid place-items-center p-6">
+        <div class="w-full max-w-md">
+          <span class="eyebrow">Comienza aquí</span>
+          <h1 class="mt-2 text-3xl font-black">Crea tu cuenta</h1>
+          <p class="mt-2 text-slate-500">Te tomará solo un momento.</p>
+          <form class="mt-7 space-y-4" data-auth-form="/auth/register">
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="name"
+                >Nombre completo</label
+              ><input
+                class="field"
+                id="name"
+                name="name"
+                required
+                maxlength="100"
+                autocomplete="name"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="email"
+                >Correo electrónico</label
+              ><input
+                class="field"
+                id="email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="phone"
+                >Teléfono
+                <span class="font-normal text-slate-400"
+                  >(opcional)</span
+                ></label
+              ><input
+                class="field"
+                id="phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="password"
+                >Contraseña</label
+              ><input
+                class="field"
+                id="password"
+                name="password"
+                type="password"
+                required
+                minlength="8"
+                autocomplete="new-password"
+              />
+              <p class="mt-1 text-xs text-slate-500">
+                Usa al menos 8 caracteres.
+              </p>
+            </div>
+            <button class="btn-primary w-full" type="submit">
+              Crear mi cuenta
+            </button>
+            <p class="text-xs leading-5 text-slate-500">
+              Al continuar aceptas el tratamiento de tus datos para gestionar tu
+              cuenta y los beneficios de SuscriPet.
+            </p>
+          </form>
+          <p class="mt-6 text-center text-sm text-slate-600">
+            ¿Ya tienes una cuenta?
+            <a class="font-bold text-leaf" href="/login.html">Ingresar</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+  </body>
+</html>

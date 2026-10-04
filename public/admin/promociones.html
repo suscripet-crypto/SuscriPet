@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Promociones — Administración SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]" data-resource="promotions">
+    <main class="container-wide py-8">
+      <header>
+        <a class="text-sm font-bold text-leaf" href="/admin/index.html"
+          >← Administración</a
+        >
+        <h1 class="mt-3 text-3xl font-black">Promociones</h1>
+        <p class="mt-2 text-slate-500">
+          Publica códigos y beneficios para mostrar en la tienda y panel de
+          usuario.
+        </p>
+      </header>
+      <div class="mt-7 grid items-start gap-6 lg:grid-cols-[.8fr_1.2fr]">
+        <form class="surface space-y-4 p-6" data-admin-create>
+          <h2 class="text-xl font-extrabold">Nueva promoción</h2>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="title"
+              >Título</label
+            ><input class="field" id="title" name="title" required />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="description"
+              >Descripción</label
+            ><textarea
+              class="field"
+              id="description"
+              name="description"
+            ></textarea>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="code"
+                >Código</label
+              ><input class="field" id="code" name="code" />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="discount"
+                >Descuento %</label
+              ><input
+                class="field"
+                id="discount"
+                name="discount"
+                type="number"
+                min="0"
+                max="100"
+              />
+            </div>
+          </div>
+          <button class="btn-primary w-full" type="submit">
+            Crear promoción
+          </button>
+        </form>
+        <section class="surface p-5">
+          <h2 class="text-lg font-extrabold">Promociones publicadas</h2>
+          <div class="mt-4" data-admin-table></div>
+        </section>
+      </div>
+    </main>
+    <script src="/js/admin-nav.js" defer></script><script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/admin.js" defer></script><script src="/js/admin-crud.js" defer></script>
+  </body>
+</html>
+

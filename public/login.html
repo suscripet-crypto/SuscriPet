@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ingresar — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body>
+    <main class="grid min-h-screen md:grid-cols-2">
+      <section
+        class="hidden flex-col justify-between bg-gradient-to-br from-ink to-leaf p-12 text-white md:flex"
+      >
+        <a href="/" class="text-2xl font-black">🐾 SuscriPet</a>
+        <div>
+          <span
+            class="text-xs font-bold uppercase tracking-widest text-emerald-100"
+            >Qué alegría verte de nuevo</span
+          >
+          <h1 class="mt-4 max-w-lg text-5xl font-black leading-tight">
+            Sus momentos felices empiezan aquí.
+          </h1>
+          <p class="mt-5 max-w-md leading-7 text-emerald-50/80">
+            Administra sus beneficios, productos y rutinas desde un solo lugar.
+          </p>
+          <div class="mt-9 text-7xl">🐕</div>
+        </div>
+        <p class="text-sm text-emerald-50/60">
+          © <span data-year></span> SuscriPet
+        </p>
+      </section>
+      <section class="grid place-items-center p-6">
+        <div class="w-full max-w-md">
+          <a href="/" class="font-black md:hidden">🐾 SuscriPet</a
+          ><span class="eyebrow mt-8 block">Tu cuenta</span>
+          <h2 class="mt-2 text-3xl font-black">Bienvenido de vuelta</h2>
+          <p class="mt-2 text-slate-500">
+            Ingresa para continuar con SuscriPet.
+          </p>
+          <form class="mt-8 space-y-5" data-auth-form="/auth/login">
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="email"
+                >Correo electrónico</label
+              ><input
+                class="field"
+                id="email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+              />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-bold" for="password"
+                >Contraseña</label
+              ><input
+                class="field"
+                id="password"
+                name="password"
+                type="password"
+                required
+                autocomplete="current-password"
+                minlength="8"
+              />
+            </div>
+            <button class="btn-primary w-full" type="submit">Ingresar</button>
+          </form>
+          <p class="mt-7 text-center text-sm text-slate-600">
+            ¿Aún no tienes cuenta?
+            <a class="font-bold text-leaf" href="/registro.html">Regístrate</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+  </body>
+</html>

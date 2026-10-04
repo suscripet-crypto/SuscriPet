@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Inventario — Administración SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]" data-resource="products">
+    <main class="container-wide py-8">
+      <header>
+        <a class="text-sm font-bold text-leaf" href="/admin/index.html"
+          >← Administración</a
+        >
+        <h1 class="mt-3 text-3xl font-black">Control de inventario</h1>
+        <p class="mt-2 text-slate-500">
+          Identifica productos con existencias bajas y administra el catálogo.
+        </p>
+      </header>
+      <section class="mt-7 grid gap-4 sm:grid-cols-3">
+        <article class="surface p-5">
+          <p class="text-sm text-slate-500">Umbral de alerta</p>
+          <strong class="mt-2 block text-2xl">5 unidades</strong>
+          <p class="mt-2 text-xs text-slate-400">
+            Los productos con 5 o menos unidades se destacan en el resumen.
+          </p>
+        </article>
+        <a class="surface p-5" href="/admin/productos.html"
+          ><p class="text-sm text-slate-500">Acción</p>
+          <strong class="mt-2 block text-xl">Administrar productos →</strong></a
+        >
+      </section>
+      <section class="surface mt-6 p-5"><div data-admin-table></div></section>
+    </main>
+    <script src="/js/admin-nav.js" defer></script><script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/admin.js" defer></script><script src="/js/admin-crud.js" defer></script>
+  </body>
+</html>
+

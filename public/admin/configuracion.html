@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Configuración — Administración SuscriPet</title>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]">
+    <main class="container-wide py-8">
+      <header>
+        <a class="text-sm font-bold text-leaf" href="/admin/index.html"
+          >← Administración</a
+        >
+        <h1 class="mt-3 text-3xl font-black">Configuración</h1>
+        <p class="mt-2 text-slate-500">
+          Información de operación y diagnóstico del proyecto.
+        </p>
+      </header>
+      <section class="mt-7 grid gap-5 md:grid-cols-2">
+        <article class="surface p-6">
+          <span class="eyebrow">Aplicación</span>
+          <h2 class="mt-3 text-xl font-extrabold">SuscriPet monolito</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-600">
+            Frontend HTML, CSS Tailwind y JavaScript vanilla servido por
+            Express. API REST y autenticación en el mismo proceso. MongoDB
+            almacena la información.
+          </p>
+          <a
+            class="mt-5 inline-flex font-bold text-leaf"
+            href="/health"
+            target="_blank"
+            rel="noreferrer"
+            >Ver estado del servidor →</a
+          >
+        </article>
+        <article class="surface p-6">
+          <span class="eyebrow">Datos iniciales</span>
+          <h2 class="mt-3 text-xl font-extrabold">Contenido de demostración</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-600">
+            Ejecuta <code>npm run seed</code> para crear planes, productos,
+            servicios, promociones, costos y una cuenta de muestra. Las
+            variables del entorno permiten definir la contraseña del
+            administrador.
+          </p>
+          <a class="mt-5 inline-flex font-bold text-leaf" href="/README.md"
+            >Instrucciones de instalación →</a
+          >
+        </article>
+        <article class="surface p-6">
+          <span class="eyebrow">Seguridad</span>
+          <h2 class="mt-3 text-xl font-extrabold">Autenticación y roles</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-600">
+            Contraseñas con bcrypt, JWT de duración limitada y cookie HttpOnly.
+            Las rutas administrativas validan el rol en el servidor.
+          </p>
+        </article>
+        <article class="surface p-6">
+          <span class="eyebrow">Pagos</span>
+          <h2 class="mt-3 text-xl font-extrabold">Demostración sin cobros</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-600">
+            Las solicitudes se registran como pendientes. No se conecta una
+            pasarela ni se procesa dinero real.
+          </p>
+        </article>
+      </section>
+    </main>
+    <script src="/js/admin-nav.js" defer></script><script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+  </body>
+</html>
+

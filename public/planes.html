@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Planes — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body>
+    <header class="border-b bg-white">
+      <nav class="container-wide flex h-20 items-center justify-between">
+        <a class="text-2xl font-black" href="/">🐾 SuscriPet</a>
+        <div class="flex items-center gap-5 text-sm font-semibold">
+          <a href="/servicios.html">Servicios</a
+          ><a href="/productos.html">Tienda</a
+          ><a class="btn-primary" href="/registro.html">Crear cuenta</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="bg-gradient-to-br from-mint to-white py-16 text-center">
+        <div class="container-wide">
+          <span class="eyebrow">Planes mensuales</span>
+          <h1 class="mt-3 text-4xl font-black md:text-5xl">
+            Cuidado que se adapta a ustedes
+          </h1>
+          <p class="mx-auto mt-4 max-w-2xl text-slate-600">
+            Elige el nivel que mejor acompaña su rutina. Los precios y
+            beneficios se mantienen actualizados desde nuestra plataforma.
+          </p>
+        </div>
+      </section>
+      <section class="container-wide py-14">
+        <div
+          class="grid gap-6 md:grid-cols-3"
+          data-plans
+          aria-live="polite"
+          aria-busy="true"
+        >
+          <article class="surface h-96 animate-pulse p-7">
+            <div class="h-4 w-24 rounded bg-slate-100"></div>
+            <div class="mt-8 h-10 w-40 rounded bg-slate-100"></div>
+            <div class="mt-8 h-4 rounded bg-slate-100"></div>
+          </article>
+          <article class="surface h-96 animate-pulse p-7">
+            <div class="h-4 w-24 rounded bg-slate-100"></div>
+            <div class="mt-8 h-10 w-40 rounded bg-slate-100"></div>
+          </article>
+          <article class="surface h-96 animate-pulse p-7">
+            <div class="h-4 w-24 rounded bg-slate-100"></div>
+            <div class="mt-8 h-10 w-40 rounded bg-slate-100"></div>
+          </article>
+        </div>
+        <p class="mt-8 text-center text-sm text-slate-500">
+          Tu solicitud queda pendiente de revisión del administrador. Al aprobarse, se activa el plan y aparecen sus beneficios.
+        </p>
+      </section>
+      <dialog
+        class="w-[min(92vw,480px)] rounded-3xl p-0 shadow-soft backdrop:bg-ink/40"
+        data-plan-dialog
+      >
+        <form method="dialog" class="surface border-0 p-7">
+          <button class="float-right rounded-full bg-sand px-3 py-1" aria-label="Cerrar">✕</button>
+          <span class="eyebrow">Solicitud de suscripción</span>
+          <h2 class="mt-2 text-2xl font-extrabold">Asocia el plan a tu mascota</h2>
+          <p class="mt-2 text-sm text-slate-500">Después de enviarla, podrás revisar el estado en Mi suscripción. Administración debe aprobarla para activar los beneficios.</p>
+          <label class="mb-2 mt-5 block text-sm font-bold" for="plan-pet">Mascota</label>
+          <select class="field" id="plan-pet" data-plan-pet required></select>
+          <div class="mt-5 flex gap-3">
+            <button class="btn-secondary flex-1" value="cancel">Ahora no</button>
+            <button class="btn-primary flex-1" type="button" data-confirm-plan>Enviar solicitud</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+    <footer class="container-wide border-t py-7 text-sm text-slate-500">
+      © <span data-year></span> SuscriPet · <a href="/">Volver al inicio</a>
+    </footer>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/planes.js" defer></script>
+  </body>
+</html>

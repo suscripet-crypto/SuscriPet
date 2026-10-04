@@ -1,0 +1,4 @@
+const profileForm = document.querySelector('[data-profile-form]');
+if (profileForm) { (async () => { try { const { user } = await API.get('/auth/me'); for (const key of ['name','email','phone']) profileForm.elements[key].value = user[key] || ''; } catch(e) { toast(e.message,'error'); if(e.status===401) location.href='/login.html'; } })(); profileForm.addEventListener('submit', async event => { event.preventDefault(); try { await API.patch('/users/me', Object.fromEntries(new FormData(profileForm))); toast('Perfil actualizado.'); } catch(e) { toast(e.message,'error'); } }); }
+const passwordForm = document.querySelector('[data-password-form]');
+if (passwordForm) passwordForm.addEventListener('submit', async event => { event.preventDefault(); try { const result = await API.patch('/users/me/password', Object.fromEntries(new FormData(passwordForm))); toast(result.message); passwordForm.reset(); } catch(e) { toast(e.message,'error'); } });

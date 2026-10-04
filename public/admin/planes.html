@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Planes — Administración SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]" data-resource="plans">
+    <main class="container-wide py-8">
+      <header>
+        <a class="text-sm font-bold text-leaf" href="/admin/index.html"
+          >← Administración</a
+        >
+        <h1 class="mt-3 text-3xl font-black">Planes y beneficios</h1>
+        <p class="mt-2 text-slate-500">
+          Actualiza precios y beneficios publicados en la página de planes.
+        </p>
+      </header>
+      <div class="mt-7 grid items-start gap-6 lg:grid-cols-[.8fr_1.2fr]">
+        <form class="surface space-y-4 p-6" data-admin-create>
+          <h2 class="text-xl font-extrabold">Nuevo plan</h2>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="name">Nombre</label
+            ><input class="field" id="name" name="name" required />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="slug"
+              >Identificador URL</label
+            ><input
+              class="field"
+              id="slug"
+              name="slug"
+              pattern="[a-z0-9-]+"
+              required
+            />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="description"
+              >Descripción</label
+            ><textarea
+              class="field"
+              id="description"
+              name="description"
+            ></textarea>
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="price"
+              >Precio mensual COP</label
+            ><input
+              class="field"
+              id="price"
+              name="price"
+              type="number"
+              min="0"
+              required
+            />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="benefits"
+              >Beneficios, uno por línea</label
+            ><textarea
+              class="field min-h-28"
+              id="benefits"
+              name="benefits"
+            ></textarea>
+          </div>
+          <button class="btn-primary w-full" type="submit">Crear plan</button>
+        </form>
+        <section class="surface p-5">
+          <h2 class="text-lg font-extrabold">Planes existentes</h2>
+          <div class="mt-4" data-admin-table></div>
+        </section>
+      </div>
+    </main>
+    <script src="/js/admin-nav.js" defer></script><script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/admin.js" defer></script><script src="/js/admin-crud.js" defer></script>
+  </body>
+</html>
+

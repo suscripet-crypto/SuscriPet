@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Administración — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]">
+    <div class="min-h-screen md:grid md:grid-cols-[245px_1fr]">
+      <aside data-admin-sidebar class="flex flex-col border-b bg-white p-4 md:sticky md:top-0 md:h-screen md:border-b-0 md:border-r md:p-6">
+        <a href="/" class="text-xl font-black">🐾 SuscriPet</a
+        ><span
+          class="mt-2 text-xs font-bold uppercase tracking-widest text-leaf"
+          >Administración</span
+        >
+        <nav class="mt-5 flex max-h-36 flex-wrap gap-1 overflow-y-auto text-sm font-semibold md:mt-8 md:max-h-[calc(100vh-150px)] md:flex-col md:flex-nowrap">
+          <a
+            class="block rounded-xl bg-mint px-4 py-3 text-leaf"
+            href="/admin/index.html"
+            >Resumen</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/usuarios.html"
+            >Usuarios</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/mascotas.html"
+            >Mascotas</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/planes.html"
+            >Planes</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/suscripciones.html"
+            >Suscripciones</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/productos.html"
+            >Productos e inventario</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/inventario.html"
+            >Inventario</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/servicios.html"
+            >Servicios</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/promociones.html"
+            >Promociones</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/costos.html"
+            >Costos y equilibrio</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/pedidos.html"
+            >Pedidos</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/notificaciones.html"
+            >Notificaciones</a
+          ><a
+            class="block rounded-xl px-4 py-3 hover:bg-sand"
+            href="/admin/configuracion.html"
+            >Configuración</a
+          >
+        </nav>
+        <button
+          class="mt-auto rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-500 hover:bg-sand"
+          data-logout
+        >
+          Cerrar sesión
+        </button>
+      </aside>
+      <main class="container-wide py-8 md:px-10">
+        <header>
+          <p class="text-sm text-slate-500">Panel de control</p>
+          <h1 class="mt-1 text-3xl font-black">Resumen de SuscriPet</h1>
+          <p class="mt-2 text-slate-500">
+            Indicadores en tiempo real de usuarios, suscripciones, catálogo y
+            costos.
+          </p>
+        </header>
+        <section
+          class="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4"
+          data-admin-overview
+        >
+          <div class="surface h-24 animate-pulse"></div>
+          <div class="surface h-24 animate-pulse"></div>
+          <div class="surface h-24 animate-pulse"></div>
+          <div class="surface h-24 animate-pulse"></div>
+        </section>
+        <section class="surface mt-7 p-6">
+          <div class="flex flex-wrap items-center justify-between gap-3"><div><h2 class="text-xl font-extrabold">Actividad reciente</h2><p class="mt-1 text-sm text-slate-500">Compras de planes y pedidos de tienda · se actualiza automáticamente.</p></div><span class="rounded-full bg-mint px-3 py-1 text-xs font-bold text-leaf">En vivo</span></div>
+          <div class="mt-4 space-y-2" data-admin-activity><p class="text-sm text-slate-500">Cargando movimientos…</p></div>
+        </section>
+        <section class="mt-8 grid gap-5 lg:grid-cols-2">
+          <article class="surface p-6">
+            <h2 class="text-xl font-extrabold">Operación</h2>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Gestiona los datos desde los módulos administrativos. Los cambios
+              se guardan en MongoDB.
+            </p>
+            <div class="mt-5 grid grid-cols-2 gap-3">
+              <a
+                class="rounded-xl bg-sand p-4 font-bold"
+                href="/admin/planes.html"
+                >📋 Planes</a
+              ><a
+                class="rounded-xl bg-sand p-4 font-bold"
+                href="/admin/suscripciones.html"
+                >🔁 Suscripciones</a
+              ><a
+                class="rounded-xl bg-sand p-4 font-bold"
+                href="/admin/productos.html"
+                >📦 Inventario</a
+              ><a
+                class="rounded-xl bg-sand p-4 font-bold"
+                href="/admin/costos.html"
+                >📊 Costos</a
+              >
+            </div>
+          </article>
+          <article class="surface p-6">
+            <h2 class="text-xl font-extrabold">Punto de equilibrio</h2>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              La estimación usa los costos mensuales configurados y el ingreso
+              promedio de las suscripciones activas. El costo variable por plan
+              puede ajustarse desde costos.
+            </p>
+            <a
+              class="mt-4 inline-block font-bold text-leaf"
+              href="/admin/costos.html"
+              >Configurar costos →</a
+            >
+          </article>
+        </section>
+        <footer class="py-8 text-sm text-slate-400">
+          © <span data-year></span> SuscriPet · Panel administrativo
+        </footer>
+      </main>
+    </div>
+    <script src="/js/admin-nav.js" defer></script>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/admin.js" defer></script><script src="/js/admin-crud.js" defer></script>
+    <script src="/js/admin-live.js" defer></script>
+  </body>
+</html>

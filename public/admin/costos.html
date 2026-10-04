@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Costos — Administración SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]" data-resource="costs">
+    <main class="container-wide py-8">
+      <header>
+        <a class="text-sm font-bold text-leaf" href="/admin/index.html"
+          >← Administración</a
+        >
+        <h1 class="mt-3 text-3xl font-black">Costos y punto de equilibrio</h1>
+        <p class="mt-2 max-w-3xl text-slate-500">
+          Configura los valores financieros de referencia. El equilibrio se
+          estima con costos fijos / (ingreso mensual promedio por suscripción
+          activa − costo variable por suscripción).
+        </p>
+      </header>
+      <div class="mt-7 grid items-start gap-6 lg:grid-cols-[.8fr_1.2fr]">
+        <form class="surface space-y-4 p-6" data-admin-create>
+          <h2 class="text-xl font-extrabold">Registrar costo</h2>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="name"
+              >Concepto</label
+            ><input class="field" id="name" name="name" required />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="amount"
+              >Valor COP</label
+            ><input
+              class="field"
+              id="amount"
+              name="amount"
+              type="number"
+              min="0"
+              required
+            />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="kind">Tipo</label
+            ><select class="field" id="kind" name="kind">
+              <option value="fixed">Fijo mensual</option>
+              <option value="variable">Variable por referencia</option>
+              <option value="initial">Inversión inicial</option>
+            </select>
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="unit">Unidad</label
+            ><select class="field" id="unit" name="unit">
+              <option value="monthly">Mensual</option>
+              <option value="subscription">Por suscripción</option>
+              <option value="once">Una vez</option>
+            </select>
+          </div>
+          <button class="btn-primary w-full" type="submit">
+            Guardar costo
+          </button>
+        </form>
+        <section class="surface p-5">
+          <h2 class="text-lg font-extrabold">Estructura financiera</h2>
+          <p class="mt-1 text-sm text-slate-500">
+            Los costos registrados se usan para calcular el resumen
+            administrativo.
+          </p>
+          <div class="mt-4" data-admin-table></div>
+        </section>
+      </div>
+      <section class="mt-6 rounded-3xl bg-ink p-7 text-white">
+        <h2 class="text-xl font-bold">Referencia del ejercicio</h2>
+        <p class="mt-2 leading-7 text-emerald-50/75">
+          Con costos fijos de $300.000 COP, una suscripción Premium de $69.900 y
+          un costo variable de referencia de $37.000, el punto de equilibrio es
+          aproximadamente 10 suscripciones mensuales.
+        </p>
+      </section>
+    </main>
+    <script src="/js/admin-nav.js" defer></script><script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/admin.js" defer></script><script src="/js/admin-crud.js" defer></script>
+  </body>
+</html>
+

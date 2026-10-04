@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mi perfil — SuscriPet</title>
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              colors: {
+                ink: "#183b35",
+                leaf: "#287a65",
+                mint: "#e8f4ee",
+                sand: "#f7f5ef",
+                coral: "#ed8064",
+              },
+              boxShadow: { soft: "0 18px 55px rgba(24,59,53,.08)" },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/output.css" />
+  </head>
+  <body class="bg-[#f6f8f6]">
+    <main class="container-wide py-8">
+      <header class="flex justify-between">
+        <a href="/dashboard.html" class="font-bold">← Mi espacio</a
+        ><a href="/" class="font-black">SuscriPet 🐾</a>
+      </header>
+      <section class="mt-10">
+        <span class="eyebrow">Cuenta personal</span>
+        <h1 class="mt-2 text-3xl font-black">Mi perfil</h1>
+        <p class="mt-2 text-slate-600">
+          Mantén actualizados tus datos de contacto y protege tu cuenta.
+        </p>
+      </section>
+      <div class="mt-7 grid gap-6 lg:grid-cols-2">
+        <form class="surface space-y-4 p-6" data-profile-form>
+          <h2 class="text-xl font-extrabold">Información personal</h2>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="name">Nombre</label
+            ><input class="field" id="name" name="name" required />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="email"
+              >Correo</label
+            ><input
+              class="field"
+              id="email"
+              name="email"
+              type="email"
+              disabled
+            />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="phone"
+              >Teléfono</label
+            ><input class="field" id="phone" name="phone" type="tel" />
+          </div>
+          <button class="btn-primary" type="submit">Guardar cambios</button>
+        </form>
+        <form class="surface space-y-4 p-6" data-password-form>
+          <h2 class="text-xl font-extrabold">Cambiar contraseña</h2>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="currentPassword"
+              >Contraseña actual</label
+            ><input
+              class="field"
+              id="currentPassword"
+              name="currentPassword"
+              type="password"
+              required
+            />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-bold" for="newPassword"
+              >Nueva contraseña</label
+            ><input
+              class="field"
+              id="newPassword"
+              name="password"
+              type="password"
+              minlength="8"
+              required
+            />
+          </div>
+          <button class="btn-secondary" type="submit">
+            Actualizar contraseña
+          </button>
+        </form>
+      </div>
+    </main>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/app.js" defer></script>
+    <script src="/js/perfil.js" defer></script>
+  </body>
+</html>
