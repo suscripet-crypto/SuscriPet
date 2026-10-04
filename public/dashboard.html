@@ -81,7 +81,17 @@
               Hola, <span data-user-name>…</span> 👋
             </h1>
           </div>
-          <div class="flex gap-2">
+          <details class="w-full md:hidden">
+            <summary class="cursor-pointer rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-leaf">☰ Navegación de mi cuenta</summary>
+            <nav class="mt-2 grid gap-1 rounded-2xl border border-slate-100 bg-white p-2 text-sm font-semibold shadow-soft">
+              <a class="rounded-xl bg-mint px-4 py-3 text-leaf" href="/dashboard.html" aria-current="page">Resumen</a>
+              <a class="rounded-xl px-4 py-3 hover:bg-sand" href="/mascotas.html">Mis mascotas</a>
+              <a class="rounded-xl px-4 py-3 hover:bg-sand" href="/mi-suscripcion.html">Mi suscripción</a>
+              <a class="rounded-xl px-4 py-3 hover:bg-sand" href="/historial.html">Historial</a>
+              <a class="rounded-xl px-4 py-3 hover:bg-sand" href="/perfil.html">Mi perfil</a>
+            </nav>
+          </details>
+          <div class="flex flex-wrap gap-2">
             <a class="btn-secondary" href="/mascotas.html">+ Mascota</a
             ><button class="btn-secondary md:hidden" data-logout>Salir</button>
           </div>

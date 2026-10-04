@@ -105,6 +105,18 @@ textarea {
 .toast.error {
   background: #a83f36;
 }
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+dialog {
+  max-width: calc(100vw - 24px);
+}
 @keyframes arrive {
   from {
     opacity: 0;
@@ -113,6 +125,29 @@ textarea {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 640px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .container-wide {
+    width: calc(100% - 32px);
+  }
+  .surface {
+    border-radius: 20px;
+  }
+  .toast {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    max-width: none;
+  }
+  button,
+  a {
+    overflow-wrap: anywhere;
   }
 }
 @media (prefers-reduced-motion: reduce) {
